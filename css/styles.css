@@ -1,0 +1,27 @@
+
+body {
+	font-family: 'Rajdhani', sans serif;
+	background-color: #d2d2d2;
+}
+
+div {
+	display: flex;
+	max-width: 800px;
+}
+
+div#main {
+	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: bold;
+	margin: 40px auto;
+}
+
+div#container {
+	width: 800px;
+	height: 800px;
+}
