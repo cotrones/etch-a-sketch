@@ -22,6 +22,12 @@ h1 {
 }
 
 div#container {
+	flex-wrap: wrap;
 	width: 800px;
 	height: 800px;
+	border: 5px solid black;
+}
+
+div.grid {
+	background-color: white;
 }
