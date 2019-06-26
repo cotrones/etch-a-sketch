@@ -31,3 +31,7 @@ div#container {
 div.grid {
 	background-color: white;
 }
+
+div.sketched {
+	background-color: black;
+}

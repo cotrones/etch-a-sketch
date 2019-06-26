@@ -10,10 +10,14 @@ let createGrid = function(num) {
 		gridBox.className = "grid";
 		gridBox.style.height = size + "px";
 		gridBox.style.width = size + "px";
+		gridBox.addEventListener('mouseover', sketch);
 
 		container.appendChild(gridBox);
-		console.log('box ' + i + ' added');
 	}
+}
+
+let sketch = function(event) {
+	event.target.classList.add('sketched');
 }
 
 createGrid(16);
