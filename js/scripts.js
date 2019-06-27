@@ -1,11 +1,14 @@
 
 const container = document.querySelector('#container');
+const classic = document.querySelector('#classic');
+const colorful = document.querySelector('#colorful');
+const brush = document.querySelector('#brush');
 
 let createGrid = function(num) {
 	
 	for (let i = 0; i < (num*num); i++) {
 		let gridBox = document.createElement("div");
-		let size = (800 - (num*2)) / num;
+		let size = 800 / num;
 
 		gridBox.className = "grid";
 		gridBox.style.height = size + "px";
