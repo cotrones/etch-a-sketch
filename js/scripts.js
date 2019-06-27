@@ -1,8 +1,30 @@
 
 const container = document.querySelector('#container');
+
+let sketchStyle = "classic";
 const classic = document.querySelector('#classic');
+classic.onclick = function() {
+	sketchStyle = "classic";
+	classic.classList.add("bold");
+	colorful.classList.remove("bold");
+	brush.classList.remove("bold");
+}
+
 const colorful = document.querySelector('#colorful');
+colorful.onclick = function() {
+	sketchStyle = "colorful";
+	classic.classList.remove("bold");
+	colorful.classList.add("bold");
+	brush.classList.remove("bold");
+}
+
 const brush = document.querySelector('#brush');
+brush.onclick = function() {
+	sketchStyle = "brush";
+	classic.classList.remove("bold");
+	colorful.classList.remove("bold");
+	brush.classList.add("bold");
+}
 
 let createGrid = function(num) {
 	
@@ -20,7 +42,29 @@ let createGrid = function(num) {
 }
 
 let sketch = function(event) {
-	event.target.classList.add('sketched');
+	switch(sketchStyle){
+		case "classic":
+			event.target.style.background = "black";
+			event.target.style.opacity = 1;
+			break;
+		case "colorful":
+			event.target.style.background = randomColor();
+			event.target.style.opacity = 1;
+			break;
+		case "brush":
+			if (event.target.style.background != "black" && event.target.style.opacity == 1) {
+				event.target.style.opacity = 0;
+			}
+			event.target.style.background="black";
+			let opacity = Number(event.target.style.opacity);
+			opacity += 0.1;
+			event.target.style.opacity = opacity;
+			break;
+	}
+}
+
+let randomColor = function() {
+	return "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
 }
 
 let reset = function() {

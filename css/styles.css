@@ -56,10 +56,6 @@ div#container {
 	background-color: white;
 }
 
-div.sketched {
-	background-color: black;
-}
-
 button.bold {
 	font-weight: bold;
 }
